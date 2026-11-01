@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dw0cakwnqvync"]
+
+[ext_resource type="Script" uid="uid://dstl1o6qx3dh4" path="res://show_runner.gd" id="1_uwvbc"]
+[ext_resource type="PackedScene" uid="uid://cletd4vq3car5" path="res://main_slotstyle.tscn" id="2_x3k4g"]
+[ext_resource type="PackedScene" uid="uid://dspll7pmkyubt" path="res://farkle_menu.tscn" id="3_hs8dd"]
+
+[node name="ShowRunner" type="Node" unique_id=1232903433]
+script = ExtResource("1_uwvbc")
+
+[node name="main-slotstyle" parent="." unique_id=678672228 instance=ExtResource("2_x3k4g")]
+
+[node name="FarkleMenu" parent="." unique_id=907148077 instance=ExtResource("3_hs8dd")]
+visible = false
+
+[connection signal="farkled" from="main-slotstyle" to="." method="_on_mainslotstyle_farkled"]
+[connection signal="request_dice" from="main-slotstyle" to="." method="_on_mainslotstyle_request_dice"]
+[connection signal="new_game" from="FarkleMenu" to="." method="start_a_new_game"]
+[connection signal="quit_game" from="FarkleMenu" to="." method="_on_farkle_menu_quit_game"]

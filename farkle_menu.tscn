@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dspll7pmkyubt"]
+
+[ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="1_a132v"]
+[ext_resource type="Script" uid="uid://bbuah151qv2gy" path="res://farkle_menu.gd" id="1_gfrro"]
+[ext_resource type="Texture2D" uid="uid://buv82kpw6f8fl" path="res://art/farkle-clown.png" id="3_g44ku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.15263551, 0.4171243, 0.48201215, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um81d"]
+atlas = ExtResource("3_g44ku")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dldfv"]
+atlas = ExtResource("3_g44ku")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs7j1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um81d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dldfv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.25
+}]
+
+[node name="FarkleMenu" type="Control" unique_id=907148077]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gfrro")
+
+[node name="Panel" type="Panel" parent="." unique_id=12608107]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 144.0
+offset_right = 474.0
+offset_bottom = 790.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="QuitButton" type="Button" parent="." unique_id=902088502]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 441.0
+offset_right = 398.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("1_a132v")
+theme_override_font_sizes/font_size = 72
+text = "QUIT"
+
+[node name="NewGameButton" type="Button" parent="." unique_id=968732871]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 593.0
+offset_right = 398.0
+offset_bottom = 713.0
+theme_override_fonts/font = ExtResource("1_a132v")
+theme_override_font_sizes/font_size = 44
+text = "New.Game"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=659198467]
+position = Vector2(274, 290.00003)
+scale = Vector2(0.5925, 0.5925)
+sprite_frames = SubResource("SpriteFrames_hs7j1")
+autoplay = "default"
+frame_progress = 0.61882246
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]

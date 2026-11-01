@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dw0cakwnqvync"]
+
+[ext_resource type="Script" uid="uid://dstl1o6qx3dh4" path="res://show_runner.gd" id="1_uwvbc"]
+[ext_resource type="PackedScene" uid="uid://cletd4vq3car5" path="res://main_slotstyle.tscn" id="2_x3k4g"]
+
+[node name="ShowRunner" type="Node" unique_id=1232903433]
+script = ExtResource("1_uwvbc")
+
+[node name="main-slotstyle" parent="." unique_id=678672228 instance=ExtResource("2_x3k4g")]

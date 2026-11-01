@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://crtdv5djku0ij" path="res://main-old.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=128961043]
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1830755121]
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0.03137255, 0.13725491, 0.20392157, 1)
+
+[node name="Button" type="Button" parent="." unique_id=100175120]
+offset_left = 221.0
+offset_top = 47.0
+offset_right = 299.0
+offset_bottom = 116.0
+text = "ROLL"
+
+[node name="Dice1" type="Button" parent="." unique_id=117694092]
+offset_left = 113.0
+offset_top = 320.0
+offset_right = 151.0
+offset_bottom = 369.0
+disabled = true
+toggle_mode = true
+
+[node name="Dice2" type="Button" parent="." unique_id=1657534210]
+offset_left = 224.0
+offset_top = 321.0
+offset_right = 262.0
+offset_bottom = 370.0
+disabled = true
+toggle_mode = true
+
+[node name="Dice3" type="Button" parent="." unique_id=1283546786]
+offset_left = 348.0
+offset_top = 322.0
+offset_right = 386.0
+offset_bottom = 371.0
+disabled = true
+toggle_mode = true
+
+[node name="Dice4" type="Button" parent="." unique_id=422687388]
+offset_left = 116.0
+offset_top = 409.0
+offset_right = 154.0
+offset_bottom = 458.0
+disabled = true
+toggle_mode = true
+
+[node name="Dice5" type="Button" parent="." unique_id=116151076]
+offset_left = 227.0
+offset_top = 410.0
+offset_right = 265.0
+offset_bottom = 459.0
+disabled = true
+toggle_mode = true
+
+[node name="Dice6" type="Button" parent="." unique_id=867917853]
+offset_left = 351.0
+offset_top = 411.0
+offset_right = 389.0
+offset_bottom = 460.0
+disabled = true
+toggle_mode = true
+
+[node name="ItemList" type="ItemList" parent="." unique_id=2034132856]
+offset_left = 59.0
+offset_top = 567.0
+offset_right = 463.0
+offset_bottom = 768.0
+select_mode = 2
+item_count = 28
+max_columns = 4
+same_column_width = true
+fixed_column_width = 95
+item_0/text = "Single 5"
+item_0/disabled = true
+item_1/text = "Single 1"
+item_1/disabled = true
+item_2/text = "Three 2s"
+item_2/disabled = true
+item_3/text = "Three 3s"
+item_3/disabled = true
+item_4/text = "Four 2s"
+item_4/disabled = true
+item_5/text = "Three 4s"
+item_5/disabled = true
+item_6/text = "Three 5s"
+item_6/disabled = true
+item_7/text = "Four 3s"
+item_7/disabled = true
+item_8/text = "Three 6s"
+item_8/disabled = true
+item_9/text = "Five 2s"
+item_9/disabled = true
+item_10/text = "Four 4s"
+item_10/disabled = true
+item_11/text = "Four 5s"
+item_11/disabled = true
+item_12/text = "Three 1s"
+item_12/disabled = true
+item_13/text = "Straight"
+item_13/disabled = true
+item_14/text = "Boxcars"
+item_14/disabled = true
+item_15/text = "Five 3s"
+item_15/disabled = true
+item_16/text = "Four 6s"
+item_16/disabled = true
+item_17/text = "Six 2s"
+item_17/disabled = true
+item_18/text = "Five 4s"
+item_18/disabled = true
+item_19/text = "Five 5s"
+item_19/disabled = true
+item_20/text = "Four 1s"
+item_20/disabled = true
+item_21/text = "Six 3s"
+item_21/disabled = true
+item_22/text = "Five 6s"
+item_22/disabled = true
+item_23/text = "Six 4s"
+item_23/disabled = true
+item_24/text = "Six 5s"
+item_24/disabled = true
+item_25/text = "Five 1s"
+item_25/disabled = true
+item_26/text = "Six 6s"
+item_26/disabled = true
+item_27/text = "Six 1s"
+item_27/disabled = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Dice1" to="." method="_on_dice_1_toggled"]
+[connection signal="toggled" from="Dice2" to="." method="_on_dice_2_toggled"]
+[connection signal="toggled" from="Dice3" to="." method="_on_dice_3_toggled"]
+[connection signal="toggled" from="Dice4" to="." method="_on_dice_4_toggled"]
+[connection signal="toggled" from="Dice5" to="." method="_on_dice_5_toggled"]
+[connection signal="toggled" from="Dice6" to="." method="_on_dice_6_toggled"]

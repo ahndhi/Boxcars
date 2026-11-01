@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://wyl1j3085ovr"]
+
+[ext_resource type="Script" uid="uid://1mc70lbch2vw" path="res://dice_slotstyle.gd" id="1_hxxfb"]
+[ext_resource type="FontFile" uid="uid://u7ba83hos8uq" path="res://fonts/pips2.ttf" id="2_e2p0f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.827451, 0.16470589, 0.003921569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.28235295)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4jp2"]
+size = Vector2(60, 60)
+
+[node name="Dice" type="Node2D" unique_id=521593584]
+script = ExtResource("1_hxxfb")
+
+[node name="ColorRect" type="Panel" parent="." unique_id=268270618]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="SaveArea" type="Area2D" parent="." unique_id=88211525]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveArea" unique_id=1366970524]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_m4jp2")
+
+[node name="Button" type="Button" parent="." unique_id=1659796240]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_e2p0f")
+theme_override_font_sizes/font_size = 54
+text = "2"
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
