@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cjbcv6o80uiit"]
+
+[ext_resource type="Script" uid="uid://dm8dy5q4tgrxg" path="res://shop_item.gd" id="1_v846v"]
+[ext_resource type="Texture2D" uid="uid://ejijvhksqgk5" path="res://art/cyclops.png" id="2_v846v"]
+[ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="2_wxfep"]
+[ext_resource type="FontFile" uid="uid://crahv0xoteach" path="res://fonts/Mansalva-Regular.ttf" id="3_d8bsp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.15294118, 0.41568628, 0.48235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_color = Color(0.91764706, 0.6862745, 0.29803923, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.36862746)
+shadow_size = 4
+
+[node name="ShopItem" type="Control" unique_id=1073256712]
+layout_mode = 3
+anchor_right = 0.393
+anchor_bottom = 0.45800003
+offset_right = -0.22000122
+offset_bottom = 0.3199768
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v846v")
+
+[node name="BGPanel" type="Panel" parent="." unique_id=1493992832]
+layout_mode = 0
+offset_right = 212.0
+offset_bottom = 440.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="Image" type="TextureRect" parent="." unique_id=692061888]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 212.0
+offset_bottom = 220.0
+texture = ExtResource("2_v846v")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=2054999772]
+custom_minimum_size = Vector2(212, 82)
+layout_mode = 0
+offset_top = 224.0
+offset_right = 212.0
+offset_bottom = 306.0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("2_wxfep")
+theme_override_font_sizes/font_size = 28
+text = "The Cyclops"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="DescLabel" type="RichTextLabel" parent="." unique_id=308522044]
+layout_mode = 0
+offset_top = 306.0
+offset_right = 212.0
+offset_bottom = 400.0
+theme_override_constants/line_separation = -4
+theme_override_fonts/normal_font = ExtResource("3_d8bsp")
+text = "Spider Eyes will transform one random side of the selected die to 6."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="." unique_id=477850008]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 400.0
+offset_right = 206.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("2_wxfep")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

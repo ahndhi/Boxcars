@@ -21,6 +21,11 @@ func play_boxcars():
 	$Label.add_theme_color_override("font_color", Color(0.992, 0.635, 0.286, 1.0))
 	$AnimationPlayer.play("farkle")
 
+func play_rolling(score):
+	$Label.text = str(score) + " and ROLLING!"
+	$Label.add_theme_color_override("font_color", Color(0.275, 0.945, 0.463, 1.0))
+	$AnimationPlayer.play("farkle")
+
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	farked.emit()
 	$".".queue_free()

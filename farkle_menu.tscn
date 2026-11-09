@@ -5,11 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://buv82kpw6f8fl" path="res://art/farkle-clown.png" id="3_g44ku"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
-bg_color = Color(0.15263551, 0.4171243, 0.48201215, 1)
+bg_color = Color(0.15294118, 0.41568628, 0.48235294, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.27058825)
+shadow_size = 7
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_um81d"]
 atlas = ExtResource("3_g44ku")

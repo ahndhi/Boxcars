@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cfnkm5waymich"]
+
+[ext_resource type="Script" uid="uid://cxuo1fpq454iq" path="res://win_menu.gd" id="1_jcnpx"]
+[ext_resource type="Texture2D" uid="uid://lvpq3wvpxmhx" path="res://art/win-clown.png" id="2_705q1"]
+[ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="2_jcnpx"]
+[ext_resource type="FontFile" uid="uid://crahv0xoteach" path="res://fonts/Mansalva-Regular.ttf" id="3_jcnpx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.15294118, 0.41568628, 0.48235294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.27058825)
+shadow_size = 7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lws6u"]
+atlas = ExtResource("2_705q1")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcsnf"]
+atlas = ExtResource("2_705q1")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs7j1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lws6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcsnf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.25
+}]
+
+[node name="WinMenu" type="Control" unique_id=907148077]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jcnpx")
+
+[node name="Panel" type="Panel" parent="." unique_id=12608107]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 144.0
+offset_right = 474.0
+offset_bottom = 790.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="ContButton" type="Button" parent="." unique_id=902088502]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 676.0
+offset_right = 451.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("2_jcnpx")
+theme_override_font_sizes/font_size = 57
+text = "CONTINUE"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=659198467]
+position = Vector2(274, 290.00003)
+scale = Vector2(0.5925, 0.5925)
+sprite_frames = SubResource("SpriteFrames_hs7j1")
+autoplay = "default"
+frame = 1
+frame_progress = 0.6758631
+
+[node name="Label" type="Label" parent="." unique_id=1005054272]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 426.0
+offset_right = 474.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(0.8039216, 0.19607843, 0, 1)
+theme_override_fonts/font = ExtResource("3_jcnpx")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=2002254485]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 522.0
+offset_right = 474.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(0.8352941, 0.6117647, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("3_jcnpx")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ContButton" to="." method="_on_cont_button_pressed"]

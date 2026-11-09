@@ -1,5 +1,5 @@
 extends Control
-signal new_game
+signal new_game(fresh : bool)
 signal quit_game
 
 # Called when the node enters the scene tree for the first time.
@@ -17,4 +17,4 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_new_game_button_pressed() -> void:
-	new_game.emit()
+	new_game.emit(true)

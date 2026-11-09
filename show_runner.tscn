@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dstl1o6qx3dh4" path="res://show_runner.gd" id="1_uwvbc"]
 [ext_resource type="PackedScene" uid="uid://cletd4vq3car5" path="res://main_slotstyle.tscn" id="2_x3k4g"]
 [ext_resource type="PackedScene" uid="uid://dspll7pmkyubt" path="res://farkle_menu.tscn" id="3_hs8dd"]
+[ext_resource type="PackedScene" uid="uid://cfnkm5waymich" path="res://win_menu.tscn" id="4_1jcyn"]
+[ext_resource type="PackedScene" uid="uid://b01kcxok60k5f" path="res://store.tscn" id="5_xq4d8"]
 
 [node name="ShowRunner" type="Node" unique_id=1232903433]
 script = ExtResource("1_uwvbc")
@@ -12,7 +14,17 @@ script = ExtResource("1_uwvbc")
 [node name="FarkleMenu" parent="." unique_id=907148077 instance=ExtResource("3_hs8dd")]
 visible = false
 
+[node name="WinMenu" parent="." unique_id=234038512 instance=ExtResource("4_1jcyn")]
+visible = false
+
+[node name="store" parent="." unique_id=1758975099 instance=ExtResource("5_xq4d8")]
+visible = false
+
 [connection signal="farkled" from="main-slotstyle" to="." method="_on_mainslotstyle_farkled"]
 [connection signal="request_dice" from="main-slotstyle" to="." method="_on_mainslotstyle_request_dice"]
+[connection signal="winRound" from="main-slotstyle" to="." method="_on_mainslotstyle_win_round"]
 [connection signal="new_game" from="FarkleMenu" to="." method="start_a_new_game"]
 [connection signal="quit_game" from="FarkleMenu" to="." method="_on_farkle_menu_quit_game"]
+[connection signal="winContinue" from="WinMenu" to="." method="_on_win_menu_win_continue"]
+[connection signal="itemBought" from="store" to="." method="_on_store_item_bought"]
+[connection signal="storeContinue" from="store" to="." method="_on_store_store_continue"]

@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://wyl1j3085ovr"]
 
 [ext_resource type="Script" uid="uid://1mc70lbch2vw" path="res://dice_slotstyle.gd" id="1_hxxfb"]
+[ext_resource type="Shader" uid="uid://divw2s3jqpmr3" path="res://dice-slotstyle-squarestest.gdshader" id="2_3dgko"]
 [ext_resource type="FontFile" uid="uid://u7ba83hos8uq" path="res://fonts/pips2.ttf" id="2_e2p0f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so4mo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(1, 0.6901961, 0, 0.6)
+shadow_size = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1vbg"]
+shader = ExtResource("2_3dgko")
+shader_parameter/fore_color = Color(0.827, 0.165, 0.004, 1)
+shader_parameter/back_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
 resource_local_to_scene = true
-bg_color = Color(0.827451, 0.16470589, 0.003921569, 1)
+bg_color = Color(0.827, 0.165, 0.004, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -19,7 +34,17 @@ size = Vector2(60, 60)
 [node name="Dice" type="Node2D" unique_id=521593584]
 script = ExtResource("1_hxxfb")
 
+[node name="SelectPanel" type="Panel" parent="." unique_id=253300212]
+visible = false
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 66.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_so4mo")
+
 [node name="ColorPanel" type="Panel" parent="." unique_id=268270618]
+material = SubResource("ShaderMaterial_t1vbg")
+use_parent_material = true
 offset_right = 64.0
 offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
@@ -41,3 +66,5 @@ flat = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

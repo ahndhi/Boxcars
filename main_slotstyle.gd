@@ -6,10 +6,16 @@ var rng = RandomNumberGenerator.new()
 var activeDice : Array = []
 var scoringDice : Array = []
 var usedSpaces : Array = []
+var totalScore : int = 0
+var onBoard : int = 1000
+var winScore : int = 1500
 var score : int = 0
 var activeScore : int = 0
+var rolls : int = 3
+var boxcarWorkaround : bool = false
 signal request_dice
 signal farkled
+signal winRound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +50,7 @@ func _on_roll_button_pressed() -> void:
 	$RollButton.disabled = true
 	$AddButton.disabled = true
 	var dicePos = Vector2(34,325)
+	boxcarWorkaround = false
 	activeDice.append_array(scoringDice)
 	scoringDice.clear()
 	usedSpaces.clear()
@@ -62,10 +69,12 @@ func _on_roll_button_pressed() -> void:
 		add_child(farkleInst)
 		farkleInst.play_farkle()
 		farkleInst.connect("farked", pass_up_farkle)
-		get_tree().paused = true
+		#get_tree().paused = true
+		
 
 func pass_up_farkle():
-	farkled.emit()
+	update_rolls()
+	#farkled.emit()
 
 
 func dropped_dice(emitter : Area2D):
@@ -80,7 +89,7 @@ func dropped_dice(emitter : Area2D):
 				gotoZone = zones
 		var moveNode = emitter.owner
 		if usedSpaces.has(gotoZone):
-			moveNode.position = Vector2((rng.randi_range(30,450)),(rng.randi_range(300,625)))
+			moveNode.position = Vector2((rng.randi_range(30,450)),(rng.randi_range(250,380)))
 		elif usedSpaces.has(gotoZone) == false:
 			moveNode.position = gotoZone.position + Vector2(4,4)
 			usedSpaces.append(gotoZone)
@@ -106,8 +115,7 @@ func _on_add_button_pressed() -> void:
 		activeDice.append(dice)
 		scoringDice.erase(dice)
 	score += activeScore
-	print(score)
-	if score >= 1000:
+	if score >= onBoard or totalScore >= onBoard:
 		$BankButton.disabled = false
 	activeScore = 0
 	$Label.text = "0"
@@ -119,16 +127,38 @@ func _on_add_button_pressed() -> void:
 		activeDice.erase(dice)
 	if activeDice.size() < 1:
 		request_dice.emit()
+		var farkleInst = farkleScn.instantiate()
+		add_child(farkleInst)
+		farkleInst.play_rolling(score)
 	scoringDice.clear()
 	usedSpaces.clear()
 
 
 func _on_bank_button_pressed() -> void:
 	$BankButton.disabled = true
-	score += activeScore
-	activeScore = 0
-	$Label.text = str(activeScore)
-	$Label2.text = str(score)
+	totalScore += score
+	score = 0
+	$Label2.text = str(0)
+	$TotalLabel.text = str(totalScore)
+	update_rolls()
+
+
+func update_rolls():
+	rolls -= 1
+	if rolls <= 0:
+		if totalScore < winScore:
+			farkled.emit()
+		elif totalScore >= winScore:
+			winRound.emit(totalScore, winScore)
+	elif rolls > 0:
+		$RollsLabel.text = str(rolls)
+		score = 0
+		$Label2.text = str(score)
+		request_dice.emit()
+		$AddButton.disabled = true
+		$BankButton.disabled = true
+		$RollButton.disabled = false
+
 
 func figure_score():
 	var diceValues : Array = []
@@ -373,6 +403,15 @@ func figure_score():
 		diceValues.erase(5)
 		activeScore += 50
 		
+	if diceValues.is_empty() == false and boxcarWorkaround == true:
+		var spdiceValues : Array = []
+		for dice in scoringDice:
+			spdiceValues.append(dice.value)
+		if spdiceValues.size() == 6:
+			diceValues.clear()
+			activeScore = 1000
+			
+		
 	$Label.text = str(activeScore)
 	if activeScore > 0:
 		$AddButton.disabled = false
@@ -452,5 +491,6 @@ func farkle(farkleDicetoCheck):
 		add_child(farkleInst)
 		farkleInst.play_boxcars()
 		farkleBool = false
+		boxcarWorkaround = true
 	return farkleBool
 	

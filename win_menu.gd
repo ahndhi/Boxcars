@@ -1,5 +1,5 @@
-extends Node2D
-
+extends Control
+signal winContinue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +10,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func play():
-	$AnimationPlayer.play("farkle")
 
-func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	$".".queue_free()
+func _on_cont_button_pressed() -> void:
+	winContinue.emit()

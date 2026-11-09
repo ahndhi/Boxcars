@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="2_jpfhk"]
 [ext_resource type="Texture2D" uid="uid://bxyd08y8au41e" path="res://art/encyclopaediaofc00boss_0055.jpg" id="2_undyt"]
 [ext_resource type="FontFile" uid="uid://crahv0xoteach" path="res://fonts/Mansalva-Regular.ttf" id="3_icwsl"]
+[ext_resource type="FontFile" uid="uid://u7ba83hos8uq" path="res://fonts/pips2.ttf" id="4_15ejv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
 bg_color = Color(0.45882353, 0.59607846, 0.25490198, 1)
@@ -12,15 +13,6 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 shadow_color = Color(0, 0, 0, 0.4392157)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so4mo"]
-bg_color = Color(0.24313726, 0.34117648, 0.4392157, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_color = Color(0, 0, 0, 0.34509805)
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7j1"]
@@ -32,12 +24,20 @@ corner_radius_bottom_left = 6
 shadow_color = Color(0, 0, 0, 0.34509805)
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so4mo"]
+bg_color = Color(0.24313726, 0.34117648, 0.4392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.34509805)
+shadow_size = 5
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwnlq"]
 size = Vector2(64, 64)
 
 [node name="main-slotstyle" type="Node2D" unique_id=678672228]
 script = ExtResource("1_3wjpn")
-metadata/_edit_vertical_guides_ = [19.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2145491697]
 position = Vector2(275, 478)
@@ -46,25 +46,39 @@ texture = ExtResource("2_undyt")
 
 [node name="RollBG" type="Panel" parent="." unique_id=1407226201]
 offset_left = 19.0
-offset_top = 122.0
+offset_top = 36.0
 offset_right = 521.0
-offset_bottom = 688.0
+offset_bottom = 457.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="ScoreBG2" type="Panel" parent="." unique_id=1034134583]
+offset_left = 19.0
+offset_top = 604.0
+offset_right = 521.0
+offset_bottom = 935.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hs7j1")
+
+[node name="DiceBG" type="Panel" parent="." unique_id=290233216]
+offset_left = 107.0
+offset_top = 76.0
+offset_right = 191.0
+offset_bottom = 161.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hs7j1")
 
 [node name="RollButton" type="Button" parent="." unique_id=1409015928]
 offset_left = 220.0
-offset_top = 149.0
+offset_top = 80.0
 offset_right = 341.0
-offset_bottom = 227.0
+offset_bottom = 158.0
 theme_override_fonts/font = ExtResource("2_jpfhk")
 theme_override_font_sizes/font_size = 48
 text = "Roll"
 
 [node name="ScoreBG" type="Panel" parent="." unique_id=1562203084]
 offset_left = 19.0
-offset_top = 735.0
+offset_top = 476.0
 offset_right = 521.0
-offset_bottom = 833.0
+offset_bottom = 574.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_so4mo")
 
 [node name="ScoreAreaBG1" type="ColorRect" parent="ScoreBG" unique_id=399300249]
@@ -115,35 +129,49 @@ offset_right = 487.0
 offset_bottom = 84.0
 color = Color(0.18431373, 0.18431373, 0.18431373, 0.29411766)
 
-[node name="ScoreBG2" type="Panel" parent="." unique_id=1034134583]
-offset_left = 19.0
-offset_top = 850.0
-offset_right = 521.0
-offset_bottom = 935.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hs7j1")
+[node name="RollsLabel" type="Label" parent="." unique_id=1733100576]
+offset_left = 107.0
+offset_top = 76.0
+offset_right = 191.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_15ejv")
+theme_override_font_sizes/font_size = 84
+text = "3"
+
+[node name="TotalLabel" type="Label" parent="." unique_id=461167262]
+offset_left = 196.0
+offset_top = 828.0
+offset_right = 406.0
+offset_bottom = 915.0
+theme_override_colors/font_color = Color(0.8039216, 0.19607843, 0, 1)
+theme_override_fonts/font = ExtResource("3_icwsl")
+theme_override_font_sizes/font_size = 54
+text = "0"
+vertical_alignment = 1
 
 [node name="AddButton" type="Button" parent="." unique_id=395114221]
-offset_left = 23.0
-offset_top = 853.0
-offset_right = 123.0
-offset_bottom = 931.0
+offset_left = 39.0
+offset_top = 626.0
+offset_right = 172.0
+offset_bottom = 704.0
 theme_override_fonts/font = ExtResource("2_jpfhk")
 theme_override_font_sizes/font_size = 48
 disabled = true
 text = "Add"
 
 [node name="BankButton" type="Button" parent="." unique_id=765388297]
-offset_left = 252.0
-offset_top = 853.0
-offset_right = 385.0
-offset_bottom = 931.0
+offset_left = 39.0
+offset_top = 730.0
+offset_right = 172.0
+offset_bottom = 808.0
 theme_override_fonts/font = ExtResource("2_jpfhk")
 theme_override_font_sizes/font_size = 48
 disabled = true
 text = "Bank"
 
 [node name="ScoreArea1" type="Area2D" parent="." unique_id=1812181737]
-position = Vector2(34, 747)
+position = Vector2(34, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="ScoreArea1" unique_id=1135860274]
@@ -151,7 +179,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="ScoreArea2" type="Area2D" parent="." unique_id=534738485]
-position = Vector2(114, 747)
+position = Vector2(114, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreArea2" unique_id=582170728]
@@ -159,7 +187,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="ScoreArea3" type="Area2D" parent="." unique_id=1776331573]
-position = Vector2(194, 747)
+position = Vector2(194, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ScoreArea3" unique_id=1935265321]
@@ -167,7 +195,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="ScoreArea4" type="Area2D" parent="." unique_id=2106323281]
-position = Vector2(274, 747)
+position = Vector2(274, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ScoreArea4" unique_id=805659633]
@@ -175,7 +203,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="ScoreArea5" type="Area2D" parent="." unique_id=1892161402]
-position = Vector2(354, 747)
+position = Vector2(354, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="ScoreArea5" unique_id=781366712]
@@ -183,7 +211,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="ScoreArea6" type="Area2D" parent="." unique_id=1607208837]
-position = Vector2(434, 747)
+position = Vector2(434, 488)
 collision_mask = 2
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="ScoreArea6" unique_id=1472270569]
@@ -191,10 +219,10 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_nwnlq")
 
 [node name="Label" type="Label" parent="." unique_id=698109901]
-offset_left = 130.0
-offset_top = 853.0
-offset_right = 240.0
-offset_bottom = 930.0
+offset_left = 196.0
+offset_top = 624.0
+offset_right = 306.0
+offset_bottom = 701.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_icwsl")
 theme_override_font_sizes/font_size = 48
@@ -202,14 +230,23 @@ text = "0"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1583868983]
-offset_left = 392.0
-offset_top = 853.0
-offset_right = 512.0
-offset_bottom = 936.0
+offset_left = 196.0
+offset_top = 727.0
+offset_right = 316.0
+offset_bottom = 810.0
 theme_override_fonts/font = ExtResource("3_icwsl")
 theme_override_font_sizes/font_size = 52
 text = "0"
 vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=925951164]
+offset_left = 40.0
+offset_top = 833.0
+offset_right = 176.0
+offset_bottom = 903.0
+theme_override_fonts/font = ExtResource("2_jpfhk")
+theme_override_font_sizes/font_size = 48
+text = "Total"
 
 [connection signal="pressed" from="RollButton" to="." method="_on_roll_button_pressed"]
 [connection signal="pressed" from="AddButton" to="." method="_on_add_button_pressed"]

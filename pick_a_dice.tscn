@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bdpxpwercslmu"]
+
+[ext_resource type="Script" uid="uid://dbnju1qf5wlpn" path="res://pick_a_dice.gd" id="1_q5ub1"]
+[ext_resource type="Texture2D" uid="uid://br0jnsbd3denu" path="res://art/encyclopaediaofc00boss_0051-1.jpg" id="2_g87g7"]
+[ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="3_1k7a2"]
+[ext_resource type="FontFile" uid="uid://crahv0xoteach" path="res://fonts/Mansalva-Regular.ttf" id="5_twdcj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.45882353, 0.59607846, 0.25490198, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.36862746)
+shadow_size = 4
+
+[node name="PickADice" type="Control" unique_id=39612416]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q5ub1")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2135486932]
+layout_mode = 0
+offset_left = -280.0
+offset_top = -52.0
+offset_right = 633.174
+offset_bottom = 1158.8755
+texture = ExtResource("2_g87g7")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=203726898]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 490.0
+offset_bottom = 910.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="Button" type="Button" parent="." unique_id=539748955]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 810.0
+offset_right = 474.0
+offset_bottom = 888.0
+theme_override_fonts/font = ExtResource("3_1k7a2")
+theme_override_font_sizes/font_size = 48
+text = "Cancel"
+
+[node name="StatsLabel" type="Label" parent="." unique_id=1877742927]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 234.0
+offset_right = 270.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("5_twdcj")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="StatsLabel2" type="Label" parent="." unique_id=1650458401]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 234.0
+offset_right = 490.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("5_twdcj")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_cancel_button_pressed"]

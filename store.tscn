@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://b01kcxok60k5f"]
+
+[ext_resource type="Texture2D" uid="uid://cng50p2yfead6" path="res://art/encyclopaediaofc00boss_0053.jpg" id="1_c176v"]
+[ext_resource type="Script" uid="uid://culvxmln5fer" path="res://store.gd" id="1_x7ts4"]
+[ext_resource type="FontFile" uid="uid://bne4s34eh2v67" path="res://fonts/PaletteMosaic-Regular.ttf" id="2_3hi0p"]
+[ext_resource type="FontFile" uid="uid://crahv0xoteach" path="res://fonts/Mansalva-Regular.ttf" id="4_s3f3m"]
+[ext_resource type="PackedScene" uid="uid://bdpxpwercslmu" path="res://pick_a_dice.tscn" id="5_jdgcu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.24313726, 0.34117648, 0.4392157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3529412)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7ts4"]
+bg_color = Color(0.8352941, 0.6117647, 0.21568628, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3529412)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3f3m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="store" type="Control" unique_id=1758975099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7ts4")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=95941072]
+position = Vector2(306.10498, 464.5)
+rotation = -0.063275784
+scale = Vector2(0.70199996, 0.702)
+texture = ExtResource("1_c176v")
+
+[node name="Panel" type="Panel" parent="." unique_id=627310973]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 107.0
+offset_right = 503.0
+offset_bottom = 943.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="Panel2" type="Panel" parent="." unique_id=375825258]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 22.0
+offset_right = 503.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x7ts4")
+
+[node name="Label" type="Label" parent="." unique_id=109272463]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 10.0
+offset_right = 503.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0.8039216, 0.19607843, 0, 1)
+theme_override_fonts/font = ExtResource("2_3hi0p")
+theme_override_font_sizes/font_size = 61
+text = "KickDownTown"
+horizontal_alignment = 1
+
+[node name="ItemContainer" type="Control" parent="." unique_id=1936219817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DiceContainer" type="Control" parent="." unique_id=1435380327]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContinueButton" type="Button" parent="." unique_id=2128926938]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 857.0
+offset_right = 496.0
+offset_bottom = 935.0
+theme_override_fonts/font = ExtResource("2_3hi0p")
+theme_override_font_sizes/font_size = 48
+text = "CONTINUE"
+
+[node name="Timer" type="Timer" parent="." unique_id=1459369165]
+autostart = true
+
+[node name="StatsLabel" type="Label" parent="." unique_id=623891188]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 195.0
+offset_right = 270.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("4_s3f3m")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="StatsLabel2" type="Label" parent="." unique_id=2120578733]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 195.0
+offset_right = 503.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("4_s3f3m")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1040044326]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 777.0
+offset_right = 503.0
+offset_bottom = 854.0
+theme_override_colors/font_color = Color(0.8352941, 0.6117647, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("4_s3f3m")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="PausePanel" type="Panel" parent="." unique_id=1740048259]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 22.0
+offset_right = 503.0
+offset_bottom = 943.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s3f3m")
+
+[node name="CloseButton" type="Button" parent="PausePanel" unique_id=36492787]
+clip_contents = true
+layout_mode = 0
+offset_left = 385.0
+offset_top = 6.0
+offset_right = 460.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 48
+text = "×"
+
+[node name="PickADice" parent="." unique_id=39612416 instance=ExtResource("5_jdgcu")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="PausePanel/CloseButton" to="." method="_on_close_button_pressed"]
