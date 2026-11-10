@@ -22,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q5ub1")
+metadata/_edit_horizontal_guides_ = [500.0]
 
 [node name="BG" type="TextureRect" parent="." unique_id=2135486932]
 layout_mode = 0
@@ -53,9 +54,9 @@ text = "Cancel"
 [node name="StatsLabel" type="Label" parent="." unique_id=1877742927]
 layout_mode = 0
 offset_left = 50.0
-offset_top = 234.0
+offset_top = 274.0
 offset_right = 270.0
-offset_bottom = 358.0
+offset_bottom = 398.0
 theme_override_fonts/font = ExtResource("5_twdcj")
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
@@ -63,11 +64,35 @@ horizontal_alignment = 1
 [node name="StatsLabel2" type="Label" parent="." unique_id=1650458401]
 layout_mode = 0
 offset_left = 270.0
-offset_top = 234.0
+offset_top = 274.0
 offset_right = 490.0
-offset_bottom = 358.0
+offset_bottom = 398.0
 theme_override_fonts/font = ExtResource("5_twdcj")
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
+
+[node name="DirectionsLabel" type="Label" parent="." unique_id=930246851]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 476.0
+offset_bottom = 139.0
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("5_twdcj")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="FaceStats" type="Label" parent="." unique_id=245222757]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 304.0
+offset_right = 490.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("5_twdcj")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_cancel_button_pressed"]

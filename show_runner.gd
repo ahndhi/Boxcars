@@ -11,12 +11,12 @@ var  TheDice : Array = [
 ]
 
 var TheWeights : Array = [
-	PackedFloat32Array([1,1,1,1,1,1]),
-	PackedFloat32Array([1,1,1,1,1,1]),
-	PackedFloat32Array([1,1,1,1,1,1]),
-	PackedFloat32Array([1,1,1,1,1,1]),
-	PackedFloat32Array([1,1,1,1,1,1]),
-	PackedFloat32Array([1,1,1,1,1,1])
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0]),
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0]),
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0]),
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0]),
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0]),
+	PackedFloat32Array([1.0,1.0,1.0,1.0,1.0,1.0])
 ]
 
 var TheColors : Array = [

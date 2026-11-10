@@ -37,7 +37,14 @@ var items = [
 		"title" : "Loaded",
 		"description" : "Loaded will adjust the odds of one chosen side of a selected die by +10%",
 		"price" : 800,
-		"action" : {"adjust_odds" : 10}
+		"action" : {"adjust_odds" : 0.1}
+	},
+	{
+		"image" : preload("res://art/shave.png"),
+		"title" : "Shaved",
+		"description" : "Shaved will adjust the odds of one chosen side of a selected die by -10%",
+		"price" : 800,
+		"action" : {"adjust_odds" : -0.1}
 	}
 ]
 
@@ -87,6 +94,8 @@ func prepare_store(diceValues : Array, diceWeights : Array, diceColors : Array, 
 
 
 func on_item_bought(value, move, emitter):
+	if (money - value) < 0:
+		return
 	var diceFaces : Array = []
 	var diceWeights : Array = []
 	var diceColors : Array = []
@@ -94,14 +103,15 @@ func on_item_bought(value, move, emitter):
 		diceFaces.append(dice.faces)
 		diceWeights.append(dice.weights)
 		diceColors.append(dice.color)
-	if (money - value) < 0:
-		return
 	if move.has("add_random_face"):
 		$PickADice.prepare_pick_a_dice(diceFaces, diceWeights, diceColors, false, move)
 		$PickADice.visible = true
 		#waitForDice = move
 		#$PausePanel.visible = true
 		#waitForItem = emitter
+	if move.has("adjust_odds"):
+		$PickADice.prepare_pick_a_dice(diceFaces, diceWeights, diceColors, true, move)
+		$PickADice.visible = true
 	activeItems.erase(emitter)
 	emitter.queue_free()
 	money -= value
@@ -143,9 +153,9 @@ func dice_entered(emitter):
 	var diceStats : String = ""
 	var diceStats2 : String = ""
 	for i in 3:
-		diceStats += str(emitter.faces[i]) + " / " + str(emitter.weights[i] * 100) + "%\n"
+		diceStats += str(emitter.faces[i]) + " / " + str(snapped(emitter.weights[i],0.1) * 100) + "%\n"
 	for i in range(3,6):
-		diceStats2 += str(emitter.faces[i]) + " / " + str(emitter.weights[i] * 100) + "%\n"
+		diceStats2 += str(emitter.faces[i]) + " / " + str(snapped(emitter.weights[i],0.1) * 100) + "%\n"
 	$StatsLabel.text = diceStats
 	$StatsLabel2.text = diceStats2
 

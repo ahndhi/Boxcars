@@ -66,3 +66,6 @@ func _on_button_mouse_entered() -> void:
 
 func _on_button_mouse_exited() -> void:
 	mouseOut.emit()
+
+func disable_click():
+	$Button.disabled = true
