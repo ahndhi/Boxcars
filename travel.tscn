@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://dtvhvx0uvmix5"]
+
+[ext_resource type="Texture2D" uid="uid://kvjv302uk3la" path="res://art/encyclopaediaofc00boss_0057-1.jpg" id="1_ejv8y"]
+[ext_resource type="Script" uid="uid://cxi1gdr3uur0y" path="res://travel.gd" id="1_lanau"]
+[ext_resource type="Texture2D" uid="uid://cq8xd1smvl4w2" path="res://art/gamap.png" id="2_puuq5"]
+[ext_resource type="PackedScene" uid="uid://b6u18nrsceoj3" path="res://pathing.tscn" id="4_pk548"]
+[ext_resource type="Texture2D" uid="uid://dcxuguenv5wix" path="res://art/test-town.png" id="7_lanau"]
+[ext_resource type="PackedScene" uid="uid://biwpsc4fw7bwp" path="res://travel_location.tscn" id="14_mtpht"]
+[ext_resource type="Texture2D" uid="uid://jy41i4n54ons" path="res://art/roller-icon.png" id="14_yjggk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwnlq"]
+bg_color = Color(0.24313726, 0.34117648, 0.4392157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 3
+
+[node name="Travel" type="Control" unique_id=1047855533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lanau")
+
+[node name="BG" type="TextureRect" parent="." unique_id=956134156]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -86.0
+offset_right = 704.0
+offset_bottom = 1122.4908
+texture = ExtResource("1_ejv8y")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=2012783022]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwnlq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1365965438]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("2_puuq5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pathing" parent="." unique_id=1284253470 instance=ExtResource("4_pk548")]
+layout_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1228073112]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 388.0
+offset_right = 520.0
+offset_bottom = 888.0
+texture = ExtResource("7_lanau")
+
+[node name="TravelLocation1" parent="." unique_id=1724862556 instance=ExtResource("14_mtpht")]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 62.0
+offset_right = 50.239998
+offset_bottom = 62.0
+iconFile = ExtResource("14_yjggk")
+title = "Spideropoli"
+description = "It smells like it looks. Wet."
+
+[node name="TravelLocation2" parent="." unique_id=1792949022 instance=ExtResource("14_mtpht")]
+layout_mode = 1
+offset_left = 89.0
+offset_top = 118.0
+offset_right = 89.24
+offset_bottom = 118.0
+iconFile = ExtResource("14_yjggk")
+title = "Bathburg"
+description = "\"Get into the Bath-!\" is a pretty bad slogan. Somehow, their logo is worse."
+
+[node name="TravelLocation3" parent="." unique_id=377175204 instance=ExtResource("14_mtpht")]
+layout_mode = 1
+offset_left = 114.0
+offset_top = 71.0
+offset_right = 114.24
+offset_bottom = 71.0
+iconFile = ExtResource("14_yjggk")
+title = "Jopronis"
+description = "One church, one bar, one cop."
+
+[node name="TravelLocation4" parent="." unique_id=1949822977 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 125.0
+offset_top = 127.0
+offset_right = 125.24
+offset_bottom = 127.0
+iconFile = ExtResource("14_yjggk")
+title = "Sportsylvania"
+description = "Our children are the single most important thing that will ever happen to the world."
+
+[node name="TravelLocation5" parent="." unique_id=2009151578 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 153.0
+offset_top = 62.0
+offset_right = 153.23999
+offset_bottom = 62.0
+iconFile = ExtResource("14_yjggk")
+title = "Greeb"
+description = "You can still smoke inside here!"
+
+[node name="TravelLocation6" parent="." unique_id=558216200 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 213.0
+offset_top = 50.0
+offset_right = 213.23999
+offset_bottom = 50.0
+title = "Tartansburg"
+description = "237 years ago three Scotsmen got stuck here. It's unclear how the town grew from there."
+
+[node name="TravelLocation7" parent="." unique_id=167510084 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 189.0
+offset_top = 124.0
+offset_right = 189.23999
+offset_bottom = 124.0
+title = "Marbul"
+description = "It's pronounced Merple you dumb idiot."
+
+[node name="TravelLocation8" parent="." unique_id=69638052 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 202.0
+offset_top = 200.0
+offset_right = 202.23999
+offset_bottom = 200.0
+title = "Splem"
+description = "Spend a late morning in historic downtown Splem!"
+
+[node name="TravelLocation9" parent="." unique_id=1471659613 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 256.24
+offset_bottom = 64.0
+iconFile = ExtResource("14_yjggk")
+title = "Fourtsyltonia"
+description = "It makes Splem look like a metropolis."
+
+[node name="TravelLocation10" parent="." unique_id=1199796702 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 251.0
+offset_top = 130.0
+offset_right = 251.23999
+offset_bottom = 130.0
+iconFile = ExtResource("14_yjggk")
+title = "Furpin"
+description = "They filmed an episode of \"Spider Queen' here. You probably haven't heard of it because it never aired."
+
+[node name="TravelLocation11" parent="." unique_id=1169667931 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 272.0
+offset_top = 207.0
+offset_right = 272.24
+offset_bottom = 207.0
+iconFile = ExtResource("14_yjggk")
+title = "Speddy"
+description = "There's a restaurant that serves local eels. Very expensive."
+
+[node name="TravelLocation12" parent="." unique_id=1488770158 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 326.0
+offset_top = 55.0
+offset_right = 326.24
+offset_bottom = 55.0
+title = "Ourvette"
+description = "It may look abandonned, but people, in fact, choose to live here."
+
+[node name="TravelLocation13" parent="." unique_id=1280317891 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 327.0
+offset_top = 138.0
+offset_right = 327.24
+offset_bottom = 138.0
+title = "Burgle"
+description = "They named a disease after the brothel that used to support the town."
+
+[node name="TravelLocation14" parent="." unique_id=396205125 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 308.0
+offset_top = 172.0
+offset_right = 308.24
+offset_bottom = 172.0
+title = "Indigit"
+description = "They don't know you and they don't want to."
+
+[node name="TravelLocation15" parent="." unique_id=1421254211 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 353.0
+offset_top = 81.0
+offset_right = 353.24
+offset_bottom = 81.0
+iconFile = ExtResource("14_yjggk")
+title = "Kevvers"
+description = "Check out the anime store! Just follow your nose!"
+
+[node name="TravelLocation16" parent="." unique_id=562281001 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 366.0
+offset_top = 165.0
+offset_right = 366.24
+offset_bottom = 165.0
+iconFile = ExtResource("14_yjggk")
+title = "Yubble"
+description = "A very large factory belches smoke, but when you come around the other side of it, you can see that it's just on fire."
+
+[node name="TravelLocation17" parent="." unique_id=896016561 instance=ExtResource("14_mtpht")]
+visible = false
+layout_mode = 1
+offset_left = 414.0
+offset_top = 152.0
+offset_right = 414.24
+offset_bottom = 152.0
+title = "Premature"
+description = "The most famous resident is a former televangelist who spent the 90s in prison for trying to poison NYC's water supply."
+
+[connection signal="button_pressed" from="TravelLocation1" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation2" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation3" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation4" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation5" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation6" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation7" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation8" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation9" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation10" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation11" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation12" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation13" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation14" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation15" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation16" to="." method="travel_button_pressed"]
+[connection signal="button_pressed" from="TravelLocation17" to="." method="travel_button_pressed"]

@@ -34,16 +34,16 @@ var items = [
 	},
 	{
 		"image" : preload("res://art/load.png"),
-		"title" : "Loaded",
-		"description" : "Loaded will adjust the odds of one chosen side of a selected die by +10%",
-		"price" : 800,
+		"title" : "Baby Load",
+		"description" : "Baby Load will adjust the odds of one chosen side of a selected die by +10%",
+		"price" : 100,
 		"action" : {"adjust_odds" : 0.1}
 	},
 	{
 		"image" : preload("res://art/shave.png"),
-		"title" : "Shaved",
-		"description" : "Shaved will adjust the odds of one chosen side of a selected die by -10%",
-		"price" : 800,
+		"title" : "Baby Bottom Smooth",
+		"description" : "Baby Bottom Smooth will adjust the odds of one chosen side of a selected die by -10%",
+		"price" : 100,
 		"action" : {"adjust_odds" : -0.1}
 	}
 ]

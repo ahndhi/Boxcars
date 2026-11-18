@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://b6u18nrsceoj3"]
+
+[ext_resource type="Script" uid="uid://p13rfadvri44" path="res://pathing.gd" id="1_uldt0"]
+[ext_resource type="Texture2D" uid="uid://eot7fdajtyij" path="res://art/paths/gamap1-1.png" id="2_lrg5r"]
+[ext_resource type="Shader" uid="uid://dach35waw81lv" path="res://pathing.gdshader" id="2_vjx27"]
+[ext_resource type="Texture2D" uid="uid://vtft4dds1po6" path="res://art/paths/gamap1-2.png" id="3_vjx27"]
+[ext_resource type="Texture2D" uid="uid://cn2chdn2ao3bb" path="res://art/paths/gamap2-1.png" id="4_llj07"]
+[ext_resource type="Texture2D" uid="uid://dv07eavgowaxb" path="res://art/paths/gamap2-2.png" id="5_u1kq2"]
+[ext_resource type="Texture2D" uid="uid://bg656kb5iy4w2" path="res://art/paths/gamap3-1.png" id="6_8qg1d"]
+[ext_resource type="Texture2D" uid="uid://f674mscn1v52" path="res://art/paths/gamap3-2.png" id="7_lg8bx"]
+[ext_resource type="Texture2D" uid="uid://cjsc37brnpbfx" path="res://art/paths/gamap3-3.png" id="8_3ecfr"]
+[ext_resource type="Texture2D" uid="uid://cdaan8cq43we6" path="res://art/paths/gamap3-4.png" id="9_urqnl"]
+[ext_resource type="Texture2D" uid="uid://k2q2qqdebgoc" path="res://art/paths/gamap4-1.png" id="10_gvfcq"]
+[ext_resource type="Texture2D" uid="uid://b0mh04yjn42ti" path="res://art/paths/gamap4-2.png" id="11_3badq"]
+[ext_resource type="Texture2D" uid="uid://drpdmfyt0fi2t" path="res://art/paths/gamap4-3.png" id="12_v1dak"]
+[ext_resource type="Texture2D" uid="uid://dje87cvluhgy" path="res://art/paths/gamap5-1.png" id="13_o10ko"]
+[ext_resource type="Texture2D" uid="uid://c653e7hld6i8" path="res://art/paths/gamap5-2.png" id="14_f4dt3"]
+[ext_resource type="Texture2D" uid="uid://xmicgodldcqr" path="res://art/paths/gamap5-3.png" id="15_igoxf"]
+[ext_resource type="Texture2D" uid="uid://byrtmehkwpqvo" path="res://art/paths/gamap5-4.png" id="16_a7yim"]
+[ext_resource type="Texture2D" uid="uid://dddr8j8ehwkqk" path="res://art/paths/gamap5-5.png" id="17_1n1t8"]
+[ext_resource type="Texture2D" uid="uid://b1ctwuo6loemb" path="res://art/paths/gamap6-1.png" id="18_517aq"]
+[ext_resource type="Texture2D" uid="uid://d2ygh1y8nkpjm" path="res://art/paths/gamap6-2.png" id="19_gf827"]
+[ext_resource type="Texture2D" uid="uid://bxcf20yevb8lb" path="res://art/paths/gamap6-3.png" id="20_e40uq"]
+[ext_resource type="Texture2D" uid="uid://cyleuwf7dqtvk" path="res://art/paths/gamap6-4.png" id="21_433nf"]
+[ext_resource type="Texture2D" uid="uid://bad2ewl6fjdb" path="res://art/paths/gamap7-1.png" id="22_vep4u"]
+[ext_resource type="Texture2D" uid="uid://btrdsdhhn4aij" path="res://art/paths/gamap7-2.png" id="23_oobmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0yl1"]
+shader = ExtResource("2_vjx27")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1kq2"]
+shader = ExtResource("2_vjx27")
+
+[node name="Pathing" type="Control" unique_id=1284253470]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uldt0")
+
+[node name="TextureRect1" type="TextureRect" parent="." unique_id=565544397]
+visible = false
+material = SubResource("ShaderMaterial_r0yl1")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("2_lrg5r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2104276687]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("3_vjx27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1461553440]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("4_llj07")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=532310945]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("5_u1kq2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1672663083]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("6_8qg1d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=761726698]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("7_lg8bx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="." unique_id=192673289]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("8_3ecfr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="." unique_id=1084829389]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("9_urqnl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="." unique_id=1751285063]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("10_gvfcq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="." unique_id=1809579533]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("11_3badq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect11" type="TextureRect" parent="." unique_id=569628282]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("12_v1dak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect12" type="TextureRect" parent="." unique_id=1053798686]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("13_o10ko")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect13" type="TextureRect" parent="." unique_id=1436151748]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("14_f4dt3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect14" type="TextureRect" parent="." unique_id=1615167262]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("15_igoxf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect15" type="TextureRect" parent="." unique_id=1745555991]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("16_a7yim")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect16" type="TextureRect" parent="." unique_id=1501369008]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("17_1n1t8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect17" type="TextureRect" parent="." unique_id=1329015498]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("18_517aq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect18" type="TextureRect" parent="." unique_id=684639146]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("19_gf827")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect19" type="TextureRect" parent="." unique_id=231238001]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("20_e40uq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect20" type="TextureRect" parent="." unique_id=692202789]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("21_433nf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect21" type="TextureRect" parent="." unique_id=2130475005]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("22_vep4u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect22" type="TextureRect" parent="." unique_id=947856735]
+visible = false
+material = SubResource("ShaderMaterial_u1kq2")
+use_parent_material = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 26.0
+offset_right = 530.0
+offset_bottom = 269.0
+texture = ExtResource("23_oobmm")
+expand_mode = 1
+stretch_mode = 5

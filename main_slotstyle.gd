@@ -61,6 +61,7 @@ func _on_roll_button_pressed() -> void:
 			remove_child(preDice)
 		preDice.change_number(preDice.faces[rng.rand_weighted(preDice.weights)])
 		preDice.position = dicePos
+		preDice.roll()
 		add_child(preDice)
 		dicePos.x += 80
 	if farkle(activeDice):
